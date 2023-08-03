@@ -1,0 +1,5 @@
+-- database: /home/kklepikov/_code_/sql-repetition/sql-simple/sTunes.db
+
+-- Чтобы выполнить весь файл, нажмите кнопку ▷ в правом верхнем углу окна.
+
+SELECT * FROM "albums";
