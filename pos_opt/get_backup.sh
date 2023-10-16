@@ -1,0 +1,1 @@
+cat postgres_air_2023.sql | docker exec -i posopt-db-dev psql -U postgres

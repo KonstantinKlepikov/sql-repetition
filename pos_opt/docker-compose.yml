@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+
+  posopt-db-dev:
+    image: postgres:12
+    container_name: posopt-db-dev
+    volumes:
+      - posopt-db-dev-data:/var/lib/postgresql/data/pgdata
+    env_file:
+      - .env
+    ports:
+      - 5060:5432
+    environment:
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD?Variable not set}
+      - POSTGRES_USER=${POSTGRES_USER?Variable not set}
+      - POSTGRES_DB=${POSTGRES_DB?Variable not set}
+    restart: unless-stopped
+
+volumes:
+  posopt-db-dev-data:
+    driver: local
